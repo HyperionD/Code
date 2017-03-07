@@ -1,0 +1,32 @@
+.textfield {
+  font-size: 16px;
+  border: none;
+  border-bottom: 1.5px solid rgba(34, 150, 234, 0.4);
+  display: block;
+  margin: 0;
+  padding: 4px 0;
+  width: 100%;
+  background: none;
+  text-align: left;
+  text-shadow: none;
+  outline: none;
+}
+
+.textfield:focus {
+  border-bottom: 1.5px solid rgba(34, 150, 234, 1);
+}
+
+::-webkit-input-placeholder {
+  color: rgba(187, 187, 187, 1);
+  padding-left: 10px;
+}
+
+::-moz-placeholder {
+  color: rgba(87, 187, 187, 1);
+  padding-left: 10px;
+}
+
+:-ms-input-placeholder {
+  color: rgba(1, 187, 187, 0.5);
+  padding-left: 10px;
+}

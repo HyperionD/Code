@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    min-height: 300px;
+    width: 330px;
+    overflow: hidden;
+    z-index: 1;
+    background: @color-white;
+    .border-radius;
+    .box-shadow;
+}
+
+.card-img {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: @color-blue;
+}
+
+.card-img-text {
+    font-size: 1.5 * @base-font-size;
+    color: @color-white;
+    padding-left: 8px;
+}
+
+.card-text {
+    color: fade(@color-black, 54%);
+    overflow: hidden;
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 1.5 * @base-font-size;
+    padding: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

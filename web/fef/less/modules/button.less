@@ -1,0 +1,43 @@
+.btn {
+    margin: 0;
+    padding: 0 16px;
+    height: 36px;
+    min-width: 64px;
+    font-size: @base-font-size;
+    font-weight: 1.25 * @base-font-weight;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    background: fade(@color-grey, 40%);
+    border: none;
+    outline: none;
+    .box-shadow;
+    .border-radius;
+
+    &:hover {
+        background-color: fade(@color-grey, 60%);
+    }
+
+    &:active {
+        background-color: fade(@color-grey, 90%);
+    }
+}
+
+.btn-blue {
+    background-color: fade(@color-blue, 70%);
+    color: @color-white;
+
+    &:hover {
+        background-color: fade(@color-blue, 80%);
+    }
+
+    &:active {
+        background-color: fade(@color-blue, 100%);
+    }
+}
+
+.btn-text {
+    background-color: transparent;
+    box-shadow: none;
+}

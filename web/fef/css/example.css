@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    height: 100%;
+}
+
+nav {
+    flex-basis: 8%;
+    background-color: #2e2e2e;
+    color: #fff;
+    text-align: right;
+    padding: 10px 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li {
+    margin: 5px 5px;
+}
+
+.main {
+    flex-grow: 1;
+
+    height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    min-height: 100%;
+    overflow: auto;
+}
+
+.code-show {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.code-show button {
+    margin: 10px 10px;
+}
+
+@media (max-width: 500px) {
+    body {
+        flex-direction: column;
+    }
+
+    nav .list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main {
+        display: block;
+        overflow: auto;
+    }
+
+    section {
+        height: auto;
+    }
+
+    .code-content {
+        flex-direction: column;
+    }
+}

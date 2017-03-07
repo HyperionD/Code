@@ -1,0 +1,38 @@
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-content {
+    display: flex;
+    width: 100%;
+}
+
+.slider-item {
+    min-width: 100%;
+    height: 500px;
+}
+
+.slider ul {
+  display: flex;
+}
+
+.slider ul li {
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 3px solid @color-grey;
+  list-style: none;
+  margin: 3px;
+}
+
+.slider ul li.active {
+  background-color: @color-grey;
+}

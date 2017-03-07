@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Move</title>
+    <style>
+      body {
+        color: #fff;
+      }
+
+      .linear {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        position: absolute;
+        left: 0;
+      }
+
+      .quad-easeIn {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        left: 0;
+        top: 120px;
+      }
+
+      .quad-easeOut {
+        width: 100px;
+        height: 100px;
+        background: green;
+        position: absolute;
+        left: 0;
+        top: 240px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="linear">
+      <p>quad.linear 匀速直线</p>
+    </div>
+
+    <div class="quad-easeIn">
+      <p>quad.easeIn 先慢后快</p>
+    </div>
+
+    <div class="quad-easeOut">
+      <p>quad.easeOut 先快后慢</p>
+    </div>
+
+
+    <script src='./move_dist.js'></script>
+  </body>
+</html>

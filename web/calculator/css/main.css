@@ -1,0 +1,261 @@
+/*
+ * 基本样式
+ */
+html {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * 选择文本样式
+ *
+ * ::selection仅有3个属性可用
+ * color
+ * background
+ * text-shadow
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * 更好看的水平线定义
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * vertical-align: middle 设置元素垂直对齐方式，middle 把元素放置在父元素中部
+*/
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * 移除fieldset默认样式
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * 只允许调整textarea的高度
+ */
+textarea {
+  resize: vertical;
+}
+
+/*
+ * html占满整个屏幕
+ */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * body占满整个屏幕
+ */
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400; /*400相当于normal*/
+  line-height: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ *HTML元素样式
+ */
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.02em; /*字母间距*/
+  opacity: 0.54; /*透明度*/
+  font-size: 0.6em;
+}
+
+h1 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 48px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 40px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+h4 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+h5 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+h6 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  margin-bottom: 16px;
+}
+
+a {
+  color: rgb(33, 150, 234);
+  font-weight: 500;
+}
+
+blockquote {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  position: relative;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.35;
+  letter-spacing: 0.08em; }
+  blockquote:before {
+    position: absolute;
+    left: -0.5em;
+    content: '“'; }
+  blockquote:after {
+    content: '”';
+    margin-left: -0.05em;
+}
+
+mark {
+  background-color: #f4ff81;
+}
+
+dt {
+  font-weight: 700;
+}
+
+address {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  font-style: normal;
+}
+
+ul ol {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.shadow {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.shadow-3dp {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+              0 3px 3px -2px rgba(0, 0, 0, 0.2),
+              0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.shadow-4dp {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+              0 1px 10px 0 rgba(0, 0, 0, 0.12),
+              0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-6dp {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+              0 1px 18px 0 rgba(0, 0, 0, 0.12),
+              0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.mshadow-8dp {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12),
+              0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-16dp {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+              0 6px 30px 5px rgba(0, 0, 0, 0.12),
+              0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-24dp {
+  box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14),
+              0 11px 15px -7px rgba(0, 0, 0, 0.12),
+              0 24px 38px 3px rgba(0, 0, 0, 0.2);
+}

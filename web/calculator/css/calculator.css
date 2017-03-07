@@ -1,0 +1,20 @@
+.cal {
+  display: flex; /*flex布局*/
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 300px;
+  margin: 10px;
+}
+
+.cal-input {
+  flex-grow: 1;  /*input占满空间*/
+  flex-basis: 100%; /*input自己占一行空间*/
+  height: 20px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.cal-btn {
+  flex-basis: 25%; /*每个btn占div25%的空间*/
+  height: 50px;
+}

@@ -1,0 +1,28 @@
+.textfield {
+	font-size: @base-font-size;
+	margin: 0;
+	padding: 4px 0;
+	width: 100%;
+	background: none;
+	border: none;
+	border-bottom: 1.5px solid @color-grey;
+	outline: none;
+	text-align: left;
+	text-shadow: none;
+
+	&:focus {
+		border-bottom: 1.5px solid @color-blue;
+	}
+}
+
+::-webkit-input-placeholder {
+	color: fade(@color-black, 50%);
+}
+
+::-moz-placeholder {
+	color: fade(@color-black, 50%);
+}
+
+:-ms-input-placeholder {
+	color: fade(@color-black, 50%);
+}

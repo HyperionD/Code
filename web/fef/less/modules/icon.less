@@ -1,0 +1,23 @@
+@icon-background-color: #000;
+@icon-color: #fff;
+
+.icon-base() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: @icon-background-color;
+}
+
+.icon-menu {
+    .icon-base;
+
+    &:before {
+        content: '';
+        width: 22px;
+        height: 15px;
+        background-image: linear-gradient(@icon-color 3px, transparent 0);
+        background-size: 100% 6px;
+    }
+}

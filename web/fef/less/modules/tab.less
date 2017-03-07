@@ -1,0 +1,36 @@
+.tab {
+    display: flex;
+    flex-direction: column;
+
+    .tab-title {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.2 * @base-font-size;
+
+        .tab-title-item {
+            margin: 0.5px 0.5px;
+            padding: 10px 10px;
+            cursor: pointer;
+            border-bottom: 0.5px solid fade(@color-grey, 50%);
+            .border-radius;
+
+            &.active {
+                background-color: @color-blue;
+                color: @color-white;
+            }
+
+            &:hover:not(.active) {
+                background-color: fade(@color-grey, 60%);
+            }
+        }
+    }
+
+    .tab-content-item{
+        padding: 20px 20px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}

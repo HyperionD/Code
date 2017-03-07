@@ -1,0 +1,33 @@
+.table {
+    font-size: @base-font-size;
+    border-collapse: collapse;
+    background-color: @color-white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    thead {
+            vertical-align: bottom;
+            text-align: left;
+
+            th {
+                padding: 10px 20px;
+            }
+    }
+
+    tbody {
+        vertical-align: middle;
+        font-size: 0.9 * @base-font-size;
+
+        tr {
+
+            &:hover {
+                background-color: fade(@color-grey, 40%);
+            }
+        }
+
+        td {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            padding: 10px 20px;
+        }
+    }
+}

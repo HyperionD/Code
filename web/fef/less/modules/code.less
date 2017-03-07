@@ -1,0 +1,51 @@
+.code-show {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid @color-grey;
+
+    .code-title {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid @color-grey;
+        padding: 10px 10px;
+    }
+
+    .code-content {
+        display: flex;
+        flex-direction: column;
+
+        .code {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px 10px;
+            background-color: fade(@color-grey, 50%);
+            overflow: auto;
+
+            p {
+                padding: 0 20px;
+                font-size: 0.8 * @base-font-size;
+            }
+
+            .indent {
+                padding-left: 40px;
+            }
+
+            .indent-two {
+                padding-left: 60px;
+            }
+
+            .indent-three {
+                padding-left: 80px;
+            }
+        }
+
+        .show {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px 20px;
+            overflow: auto;
+        }
+    }
+}

@@ -1,0 +1,91 @@
+.weather {
+  width: 240px;
+  height: 150px;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid #12aaeb;
+}
+
+.weather .today {
+  position: relative;
+  float: left;
+  background-color: #12aaeb;
+}
+
+.weather .today .info {
+  position: relative;
+  height: 150px;
+  width: 190px;
+  float: left;
+}
+
+.weather .today .info .cityname {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.weather .today .info hr {
+  position: absolute;
+  top: 38px;
+  left: 10px;
+  width: 30px;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.weather .today .info .text {
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  font-size: 16px;
+}
+
+.weather .today .info .temp {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  font-size: 30px;
+}
+
+.weather .today .img {
+  float: left;
+  position: absolute;
+  top: 12.5px;
+  left: 80px;
+}
+
+.forecast {
+  background-color: #fff;
+  height: 130px;
+  width: 50px;
+  float: left;
+  color: #12aaeb;
+  font-size: 10px;
+}
+
+.forecast .week {
+  text-align: center;
+}
+
+.forecast hr {
+  height: 1px;
+  border: 0;
+  margin: 0 auto;
+  padding: 0;
+  border-top: 2px solid #12aaeb;
+  width: 40px;
+  text-align: center;
+}
+
+.forecast .day-one,
+.forecast .day-two,
+.forecast .day-three {
+  margin: 10px 0;
+}
+
+.forecast img {
+}

@@ -1,0 +1,37 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 8px 0;
+}
+
+.list-item {
+  padding: 8px;
+  overflow: hidden;
+}
+
+.list-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 124px;
+  background-color: @color-white;
+  .box-shadow;
+}
+
+.list-menu-item {
+  cursor: pointer;
+
+  &:hover {
+    background-color: fade(@color-grey, 50%);
+  }
+
+	&:active {
+		background-color: fade(@color-grey, 80%);
+	}
+}
+
+.list-hr {
+	flex-direction: row;
+}
