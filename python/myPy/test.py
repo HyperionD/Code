@@ -1,6 +1,5 @@
 import mypy
 
-disk = mypy.Disk('d:')
-
-print(disk.total_disk())
+mail = mypy.Mail("mail.json")
+mail.send_mail()
 

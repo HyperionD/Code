@@ -1,0 +1,9 @@
+{
+  "server": "172.30.2.7",
+  "user": "dong.jianjun@saci.net.cn",
+  "password": "5426586dong",
+  "message": "hello from python",
+  "fromname": "Eyou Server",
+  "toaddr": "dong.jianjun@saci.net.cn",
+  "subject": "Eyou Disk Warning"
+}
