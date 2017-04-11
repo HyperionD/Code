@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LineCharts</title>
+</head>
+<body>
+
+    <div><canvas class="lineCharts"></canvas></div>
+
+    <script src="Chart.js"></script>
+    <script>
+        var ctx = document.querySelector('.lineCharts');
+
+        var data = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fill: false,
+                    lineTension: 0.1,
+                    data: [65, 59, 80, 81, 56, 55, 40]
+                },
+                {
+                    label:  "Second Line",
+                    fill: false,
+                    lineTension: 0.1,
+                    data: [50, 45, 23, 78, 45, 32, 48]
+                }
+            ]
+        };
+
+
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '温度'
+                            }
+                        }
+                    ],
+
+                    xAxes: [
+                        {
+                            scaleLabel: {
+                                display: true,
+                                labelString: '月份'
+                            }
+                        }
+                    ]
+                }
+            }
+        });
+
+
+    </script>
+</body>
+</html>
