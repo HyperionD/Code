@@ -1,5 +1,4 @@
 /**
- * Created by HyperionD on 2017/4/11.
  * DateTime 时间日期相关操作
  * DateTime.format 格式化时间
  * DateTime.format.time(time_input) 格式化时间以':'连接小时、分钟、秒
