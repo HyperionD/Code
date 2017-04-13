@@ -9,8 +9,9 @@
     <script src="time.js"></script>
     <script>
         const t = new DateTime('2017-4-13');
-        const r = t.timeStep(24*60*60*1000).formatDate().formatWeek().output;
-        console.log(r.date, r.week);
+        console.log(t.formatDate(), t.formatTime(), t.formatWeek());
+        const next_t = t.timeStep(24*60*60*1000)
+        console.log(next_t.formatDate(), next_t.formatWeek());
     </script>
 </body>
 </html>

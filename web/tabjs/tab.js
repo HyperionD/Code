@@ -1,14 +1,18 @@
 /**
  * js实现标签页
+ *
+ * 使用示例 tab.html
+ *
  * Tab(el) el为要实现标签页效果的元素，el元素下应该有classname为tab_title,tab_content的元素，
  * tab_title为标签页的标题，横向显示，默认第一项激活
- * tab_content为标签页的现实内容，顺序与tab_title相同，默认显示第一项内容
+ * tab_content为标签页的显示内容，顺序与tab_title相同，默认显示第一项内容
  * 激活的tab_title有id='active'
  * 显示的tab_content有id='show'
  */
 
 function Tab(el) {
 
+    //获取元素
     const tab_title = el.querySelector('.tab_title');
     const tab_titles = el.querySelector('.tab_title').children;
     const tab_contents = el.querySelector('.tab_content').children;
@@ -17,7 +21,7 @@ function Tab(el) {
     tab_title.style.display = 'flex';
     tab_titles[0].id = 'active';
 
-    // 将第一项内容显示，其余内容隐藏，并设置第一项内容的id='show'
+    // 将第一项tab_contents内容显示，其余内容隐藏，并设置第一项内容的id='show'
     tab_contents[0].id = 'show';
     for (let i=1; i<tab_contents.length; i++ ) {
         tab_contents[i].style.display = 'none';
