@@ -8,7 +8,6 @@
  * formatDate(sep) 格式化日期,sep不填则使用'-'作为连接符
  * formatTime() 格式化时间
  * formatWeek() 格式化星期
- * timeStep(step) 计算step偏移的日期，返回new DateTime(step_time)，可以继续链式条用以上格式化日期函数
  */
 
 function DateTime(time_input) {
