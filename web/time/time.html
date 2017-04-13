@@ -8,7 +8,10 @@
 
     <script src="time.js"></script>
     <script>
-        console.log(DateTime.format.date(DateTime.timeStep(new Date(), -30*24*60*60*1000), '-'));
+        const t = new DateTime('2017-4-13');
+        const r = t.timeStep(24*60*60*1000).formatDate().formatWeek();
+        console.log(r);
+//        console.log(r.date, r.week);
     </script>
 </body>
 </html>

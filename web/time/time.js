@@ -1,40 +1,51 @@
 /**
  * DateTime 时间日期相关操作
- * DateTime.format 格式化时间
- * DateTime.format.time(time_input) 格式化时间以':'连接小时、分钟、秒
- * DateTime.format.date(time_input, sep) 格式化日期以sep连接年、月、日
- * DateTime.format.week(time_input) 格式化星期
- * DateTime.timeStep(time_input, step) 计算step间隔的时间日期，可用DateTime.format格式化
+ * const t = new DateTime(time_input) 创建新的实例
+ * 格式化日期函数可以链式调用，结果存储在this.output中
+ * formatDate(sep) 格式化日期,sep不填则使用'-'作为连接符
+ * formatTime() 格式化时间
+ * formatWeek() 格式化星期
+ * timeStep(step) 计算step偏移的日期，返回new DateTime(step_time)，可以继续链式条用以上格式化日期函数
  */
 
-const DateTime = {
-    format: {
-        time: function (time_input) {
-            var time_obj = new Date(time_input);
-            var time_str = time_obj.getHours()+ ':' + time_obj.getMinutes() + ':' + time_obj.getSeconds();
-            return time_str;
-        },
+function DateTime(time_input) {
+    this.time_input = time_input;
+    this.time_obj = new Date(this.time_input);
+    this.output = {};
+}
 
-        date: function (time_input, sep) {
-            var time_obj = new Date(time_input);
-            var year = time_obj.getFullYear();
-            var month = time_obj.getMonth() + 1;
-            if (month < 10) {month = '0' + month}
-            var day = time_obj.getDate();
-            if (day < 10) {day = '0' + day;}
-            return year.toString() + sep + month.toString() + sep +day.toString();
-        },
-
-        week: function (time_input) {
-            var time_obj = new Date(time_input);
-            var weekStr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-            return weekStr[time_obj.getDay()];
+DateTime.prototype = {
+    formatDate: function (sep) {
+        if (sep === undefined) {
+            sep = '-';
         }
+        const year = this.time_obj.getFullYear();
+        let month = this.time_obj.getMonth() + 1;
+        if (month < 10) {month = '0' + month}
+        let day = this.time_obj.getDate();
+        if (day < 10) {day = '0' + day;}
+        const date_str = year.toString() + sep + month.toString() + sep +day.toString();
+        this.output['date'] = date_str;
+        return this;
     },
 
-    timeStep: function (time_input, step) {
-        var time_stamp = new Date(time_input).getTime();
-        var step_time = new Date(time_stamp + step);
-        return step_time;
+    formatTime: function () {
+        const time_str = this.time_obj.getHours() + ':' + this.time_obj.getMinutes() + ':' + this.time_obj.getSeconds();
+        this.output['time'] = time_str;
+        return this;
+    },
+
+    formatWeek: function () {
+        const week_list = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        const week_str = week_list[this.time_obj.getDay()];
+        this.output['week'] = week_str;
+        return this;
+    },
+
+    timeStep: function (step) {
+        const time_stamp = this.time_obj.getTime();
+        const step_time = new Date(time_stamp + step);
+        return new DateTime(step_time);
     }
 };
+
