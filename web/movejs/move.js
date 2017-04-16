@@ -83,6 +83,6 @@ Move.prototype = {
     },
 
     test: function () {
-        console.log(this.begin, this.change, this.duration)
+        console.log(this.begin, this.change, this.duration);
     }
 };
