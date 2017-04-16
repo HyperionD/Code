@@ -3,9 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>Tab</title>
+        <style>
+            .tab_title div {
+                cursor: pointer;
+            }
+
+            .tab_title div:not(#active) {
+                background-color: #cccccc;
+            }
+        </style>
     </head>
     <body>
-
         <div class="tab">
             <div class="tab_title">
                 <div>One</div>
