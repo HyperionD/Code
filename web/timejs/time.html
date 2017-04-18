@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time</title>
+</head>
+<body>
+
+    <script src="time.js"></script>
+    <script>
+        const now = Datetime.init();
+        const now_date = now.formatDate();
+        const now_week = now.formatWeek();
+
+        const before = now.stepTime(-30*24*60*60*1000);
+        const before_date = before.formatDate();
+        const before_week = before.formatWeek();
+
+        console.log(now_date);
+        console.log(now_week);
+        console.log(before_date);
+        console.log(before_week);
+    </script>
+</body>
+</html>

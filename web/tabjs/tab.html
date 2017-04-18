@@ -3,15 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Tab</title>
-        <style>
-            .tab_title div {
-                cursor: pointer;
-            }
-
-            .tab_title div:not(#active) {
-                background-color: #cccccc;
-            }
-        </style>
+        <link rel="stylesheet" href="./tab.css">
     </head>
     <body>
         <div class="tab">
@@ -29,10 +21,26 @@
             </div>
         </div>
 
+        <di class="tab2">
+            <div class="tab_title">
+                <div>标签1</div>
+                <div>标签2</div>
+                <div>标签3</div>
+            </div>
+            <div class="tab_content">
+                <div>标签内容1</div>
+                <div>标签内容2</div>
+                <div>标签内容3</div>
+            <div>
+        </div>
+
         <script src="tab.js"></script>
         <script>
-            const tab = document.querySelector('.tab');
-            Tab(tab);
+            Tab();
+
+            Tab({
+                class_name_for_tab: 'tab2'
+            });
         </script>
 
     </body>
