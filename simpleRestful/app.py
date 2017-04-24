@@ -14,13 +14,10 @@ tasks = [
 ]
 
 
-@app.route('/test/api/v1.0/tasks/<int:task_id>', methods=['GET'])
-def get_tasks(task_id):
-    task = []
-    for t in tasks:
-        if t['id'] == task_id:
-            task = t
-    resp = jsonify({'task': task})
+@app.route('/test/', methods=['GET'])
+def get_tasks():
+    task = {'a': '中文', 'b': '测试'}
+    resp = jsonify(task)
     resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
 

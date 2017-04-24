@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Move</title>
+        <style>
+            .move {
+                height: 40px;
+                width: 40px;
+                background-color: #12aaeb;
+                text-align: center;
+                color: white;
+                position: absolute;
+                border-radius: 20px;
+                opacity: 0.1;
+            }
+
+            div {
+                margin-top: 10px;
+            }
+
+            #easeIn {
+                background-color: red;
+                opacity: 0.5;
+            }
+        </style>
+    </head>
+
+    <body>
+    <div class="box">
+        <div class="move" id="linear"></div>
+        <!-- <div class="move" id="easeIn"></div> -->
+    </div>
+
+        <script src="animate.js"></script>
+        <script>
+            const linear = document.querySelector('#linear');
+            // const easeIn = document.querySelector('#easeIn');
+            animate.moveX({
+                el: linear,
+                change: 200
+            });
+
+            animate.moveY({
+                el: linear,
+                change: 200
+            });
+
+            animate.show({
+                el: linear
+            });
+            // animate.moveY(easeIn, -200, 4000);
+            animate.start_step();
+        </script>
+    </body>
+</html>
