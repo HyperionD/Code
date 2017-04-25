@@ -11,6 +11,7 @@
  * linear 迅速直线
  * easeIn 先慢后快
  */
+
 const Tween = {
     initTween: function  (time, begin, change, duration) {
         this.time = time;
@@ -54,9 +55,6 @@ function changeStyleToVal(el, style, val, unit) {
  * animate.pool 为数组，形式为[{}, {}, {}]，存放要执行的动画所需参数
  */
 const animate = {
-    running: false,
-    pool: [],
-
     /**
      * 隐藏元素
      * @param  {object} opt 参数
@@ -71,8 +69,8 @@ const animate = {
         let change = opt.change || 1;
         const duration = opt.duration || 2000;
         const tween_method = opt.tween_method || 'linear';
+        const begin = opt.begin || 1;
 
-        const begin = parseFloat(window.getComputedStyle(el).opacity);
         if (change > begin) {
             change = begin;
         }
@@ -85,7 +83,7 @@ const animate = {
             style: 'opacity',
         };
         if (begin > 0) {
-            animate.pool.push(animate_obj);
+            return animate_obj;
         }
     },
 
@@ -103,8 +101,9 @@ const animate = {
         let change = opt.change || 1;
         const duration = opt.duration || 2000;
         const tween_method = opt.tween_method || 'linear';
+        const begin = opt.begin || 0;
+        console.log(begin);
 
-        const begin = parseFloat(window.getComputedStyle(el).opacity);
         if (begin + change > 1) {
             change = 1 - begin;
         }
@@ -116,8 +115,8 @@ const animate = {
             tween_method: tween_method,
             style: 'opacity',
         };
-        if (begin < 1) {
-            animate.pool.push(animate_obj);
+        if (begin <= 1) {
+            return animate_obj;
         }
     },
 
@@ -135,8 +134,7 @@ const animate = {
         const change = opt.change;
         const duration = opt.duration || 2000;
         const tween_method = opt.tween_method || 'linear';
-
-        const begin = el.offsetLeft;
+        const begin = opt.begin || el.offsetLeft;
         const move_obj = {
             el: el,
             begin: begin,
@@ -146,7 +144,7 @@ const animate = {
             style: 'left',
             unit: 'px'
         };
-        animate.pool.push(move_obj);
+        return move_obj;
     },
 
     /**
@@ -163,8 +161,7 @@ const animate = {
         const change = opt.change;
         const duration = opt.duration || 2000;
         const tween_method = opt.tween_method || 'linear';
-
-        const begin = el.offsetLeft;
+        const begin = opt.begin || el.offsetLeft;
         const move_obj = {
             el: el,
             begin: begin,
@@ -174,53 +171,47 @@ const animate = {
             style: 'top',
             unit: 'px'
         };
-        animate.pool.push(move_obj);
+        return move_obj;
     },
 
-    /**
-     * 开始执行动画
-     * 执行requestAnimationFrame时，每一个时间点遍历animate.pool数组，将数组中所有动画要改变的值改变，如：moveX的left值，moveY的top值
-     * 当animate.pool.length为0时结束动画，重新设置animate.pool = [], animate.running = false
-     */
-    start: function () {
-        function go(time) {
-            for (let i=0; i<animate.pool.length; i++) {
-                const animate_item = animate.pool[i];
-                const begin = animate_item.begin;
-                const change = animate_item.change;
-                const duration = animate_item.duration;
-                const el = animate_item.el;
-                const style = animate_item.style;
-                const tween_method = animate_item.tween_method;
-                const unit = animate_item.unit;
-                const tween = Tween.initTween(time, begin, change, duration);
-                const val = tween[tween_method]();
-                changeStyleToVal(el, style, val, unit);
-                console.log(val);
+    run: function (pool) {
+        let pass_time = 0;
+        function step () {
+            const first_animate_array = pool[0];
+            // console.log(first_animate_array.length);
+            function go (time) {
+                time = time - pass_time;
+                for (let i=0; i<first_animate_array.length; i++) {
+                    const animate_item = first_animate_array[i];
+                    const begin = animate_item.begin;
+                    const change = animate_item.change;
+                    const duration = animate_item.duration;
+                    const el = animate_item.el;
+                    const style = animate_item.style;
+                    const tween_method = animate_item.tween_method;
+                    const unit = animate_item.unit;
 
-                if (val <= Math.min(begin, begin+change) || val >= Math.max(begin, begin+change)) {
-                    animate.pool.splice(i, 1);
+                    const tween = Tween.initTween(time, begin, change, duration);
+                    const val = tween[tween_method]();
+                    changeStyleToVal(el, style, val, unit);
+                    console.log(style, val, time, begin, change, duration);
+
+                    if (val <= Math.min(begin, begin+change) || val >= Math.max(begin, begin+change)) {
+                        first_animate_array.splice(i, 1);
+                    }
+                }
+                if (first_animate_array.length !== 0) {
+                    requestAnimationFrame(go);
+                } else {
+                    pool.splice(0, 1);
+                    pass_time = pass_time + time;
+                    if (pool.length !==0) {
+                        step();
+                    }
                 }
             }
-            if (animate.pool.length !== 0) {
-                requestAnimationFrame(go);
-            } else {
-                animate.pool = [];
-                animate.running = false;
-                cancelAnimationFrame(id);
-            }
+            const id = requestAnimationFrame(go);
         }
-
-        let id;
-        if (animate.running === false) {
-            id = requestAnimationFrame(go);
-            animate.running = true;
-        } else if (animate.running === true) {
-            throw 'animate has running';
-        }
-    },
-
-    start_step: function () {
-        
+        step();
     }
 };
