@@ -57,7 +57,7 @@ function getJSON(options) {
         finalOptions.callbackFunc(data);
       }
     }
-  }
+}
 }
 
 module.exports = {

@@ -35,31 +35,35 @@
         <script>
             const linear = document.querySelector('#linear');
             const easeIn = document.querySelector('#easeIn');
-            
+
             const a = animate.moveX({
                 el: linear,
-                change: 200
+                change: 200,
+                duration: 5000
             });
 
             const b = animate.moveY({
                 el: linear,
-                change: 200
+                change: 200,
+                duration: 5000
             });
 
             const c = animate.moveX({
                 el: easeIn,
                 change: 200,
-                tween_method: 'easeIn'
+                tween_method: 'linear',
+                duration: 5000
             });
 
             const d = animate.moveY({
                 el: easeIn,
                 change: 200,
-                tween_method: 'easeIn'
+                tween_method: 'linear',
+                duration: 5000
             });
 
 
-            const pool = [[a, b], [c], [d]];
+            const pool = [[a, b, c, d]];
             animate.run(pool);
         </script>
     </body>
