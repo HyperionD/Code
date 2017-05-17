@@ -1,0 +1,12 @@
+{
+  "name": "VueLearn",
+  "scripts": {
+    "serve": "http-server -p 9090",
+    "livereload": "live-reload --port 9090"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.11",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1"
+  }
+}
