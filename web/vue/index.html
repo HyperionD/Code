@@ -8,22 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <p>{{ message }}</p>
-        <input v-model="message" />
-        <div v-html="vhtml"></div>
-    </div>
-
-    <script src="vue.js"></script>
-    <script>
-        const app = new Vue({
-            el: '#app',
-            data: {
-                message: "Browser sync",
-                vhtml: '<p>Hi</p>'
-            }
-        })
-
-    </script>
+    <p>Hello</p>
+    <script src="dist/dist.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ __pycache__/
 env/
 build/
 develop-eggs/
-dist/
+#dist/
 downloads/
 eggs/
 .eggs/
@@ -118,9 +118,11 @@ $RECYCLE.BIN/
 # Intellij IDEA
 .idea/
 
+# node
+node_modules/
+
+
 #self
 try/
 python/myPy/temp
-
-
 web/myjs/readme.md
