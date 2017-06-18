@@ -8,28 +8,31 @@ const replace = require('rollup-plugin-replace');
 const commonjs = require('rollup-plugin-commonjs');
 
 gulp.task('serve', ["js"], function () {
-    browserSync.init({ server: './' });
+    browserSync.init({ server: './app/' });
 
-    gulp.watch('./index.html', ['change']);
-    gulp.watch('./src/*.js', ["js-watch"]);
+    gulp.watch('./app/index.html', ['change']);
+    gulp.watch('./app/src/*.js', ["js-watch"]);
 });
 
 gulp.task('change', function () {
-    gulp.src(['./index.html', './dist/*.js'])
+    gulp.src(['./app/index.html', './app/dist/*.js'])
         .pipe(browserSync.stream());
 });
 
 gulp.task('js', function () {
     return rollup.rollup({
-        entry: 'src/main.js',
+        entry: './app/main.js',
         plugins: [
-            resolve(),
+            resolve({
+                jsnext: true,
+                main: true,
+            }),
             commonjs(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('development'),
                 'process.env.VUE_ENV': JSON.stringify('browser')
             }),
-            vue(),
+            vue({ compileTemplate: true, css: true }),
             babel({
                 exclude: "node_modules/**"
             })
@@ -37,7 +40,7 @@ gulp.task('js', function () {
     }).then(function (bundle) {
         bundle.write({
             format: "iife",
-            dest: "dist/monitor.dist.js"
+            dest: "./app/dist/dist.js"
         })
     })
 });
