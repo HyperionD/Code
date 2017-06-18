@@ -1,7 +1,7 @@
 {
-  "name": "temp",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Temp Project",
+  "description": "Chat with websocket",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
     "babel-preset-latest": "^6.24.1",
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
-    "rollup": "^0.43.0",
+    "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-less": "^0.1.3",

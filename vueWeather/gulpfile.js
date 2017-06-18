@@ -10,7 +10,7 @@ const commonjs = require('rollup-plugin-commonjs');
 gulp.task('serve', ["js"], function () {
     browserSync.init({ server: './app/' });
 
-    gulp.watch('./app/src/index.html', ['change']);
+    gulp.watch('./app/index.html', ['change']);
     gulp.watch('./app/src/*.js', ["js-watch"]);
 });
 
@@ -19,14 +19,11 @@ gulp.task('change', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('vue', function () {
+gulp.task('js', function () {
     return rollup.rollup({
         entry: './app/src/main.js',
         plugins: [
-            resolve({
-                jsnext: true,
-                main: true,
-            }),
+            resolve(),
             commonjs(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('development'),
@@ -40,9 +37,9 @@ gulp.task('vue', function () {
     }).then(function (bundle) {
         bundle.write({
             format: "iife",
-            dest: "./app/dist/dist.js"
-        });
-    });
+            dest: "./app/dist/weather.dist.js"
+        })
+    })
 });
 
 gulp.task("js-watch", ["js"], function (done) {

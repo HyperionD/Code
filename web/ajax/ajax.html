@@ -10,19 +10,14 @@
 
     <script src="./ajax.js" ></script>
     <script type="text/javascript">
-//        const url = 'http://ip-api.com/json';
-//        const heweather_key = '4fedf88564564ae8aecd759aa79bfee9';
-//        ajax({ url: url})
-//            .then(function get_ip(data) {
-//                weather_url = 'https://free-api.heweather.com/v5/weather?city=' + data.query + '&key=' + heweather_key;
-//                return ajax({ url: weather_url });
-//            })
-//            .then(function get_weather (data) {
-//                console.log(data);
-//            });
-        const url = "http://54.223.92.89:8888/ctr/prg/webservice?action=ping2";
-        ajax({ url: url })
-            .then(function show(data) {
+        const url = 'http://ip-api.com/json';
+        const heweather_key = '4fedf88564564ae8aecd759aa79bfee9';
+        ajax({ url: url})
+            .then(function get_ip(data) {
+                weather_url = 'https://free-api.heweather.com/v5/weather?city=' + data.query + '&key=' + heweather_key;
+                return ajax({ url: weather_url });
+            })
+            .then(function get_weather (data) {
                 console.log(data);
             });
     </script>
