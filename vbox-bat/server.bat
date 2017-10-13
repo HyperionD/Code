@@ -1,0 +1,1 @@
+VBoxManage startvm server -type headless

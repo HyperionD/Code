@@ -1,0 +1,1 @@
+VBoxManage startvm archlinux -type headless

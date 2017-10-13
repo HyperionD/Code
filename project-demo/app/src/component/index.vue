@@ -1,16 +1,14 @@
 <template>
     <div class="index">
-        <p>Index Page Hello</p>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import home from "./home.vue";
     export default {
         data: function () {
             return {};
-        },
-        components: {home}
+        }
     };
 </script>
 

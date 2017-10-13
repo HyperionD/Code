@@ -1,0 +1,45 @@
+#!/bin/bash
+# @author: dong jianjun
+# @date: 20170904
+# @description: mirror all data from IBM Storage to A03
+
+# set variable
+DATETIME=`date "+%Y%m%d-%H%M"`
+LOG_FOLDER=/data/scripts/log/rsync/
+MIRROR_LOG_PATH=${LOG_FOLDER}mirror-${DATETIME}.log
+ERROR_LOG_PATH=${LOG_FOLDER}error_mirror.log
+LOCK_FILE=${LOG_FOLDER}mirror.lock
+
+# create log folder if not exist
+if [ ! -d $LOG_FOLDER ]; then
+  mkdir -p $LOG_FOLDER
+fi
+
+# start mirror
+if mountpoint -q /mnt/nasA; then
+  echo "mounted!"
+  #if [ ! -e $LOCK_FILE ]; then
+  #  # create lockfile
+  #  touch $LOCK_FILE
+  #  # write the script pid to lockfile
+  #  echo $$ > $LOCK_FILE
+  #  # append current datetime to error log file
+  #  echo [$DATETIME] >> $ERROR_LOG_PATH
+  #  # start rsync and write sttout stterr
+  #  rsync -av --delete /bak01/ /bak02 1> $MIRROR_LOG_PATH 2>> $ERROR_LOG_PATH
+  #  # write new line to error log
+  #  echo "" >> $ERROR_LOG_PATH
+  #  rm -rf $LOCK_FILE
+  #else
+  #  # append current datetime to error log file
+  #  echo [$DATETIME] >> $ERROR_LOG_PATH
+  #  # write the error message
+  #  echo "the lockfile has exists, please check" >> $ERROR_LOG_PATH
+  #  # write new line to error log
+  #  echo "" >> $ERROR_LOG_PATH
+  #fi
+else
+  echo "not mount"
+fi
+
+exit 0

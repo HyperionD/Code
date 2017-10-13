@@ -1,6 +1,11 @@
 <template>
     <div class="home">
-        <p>Home Page</p>
+        <p>Home Page Hello</p>
+        <p>
+            <router-link to="/foo">Click to Foo Page</router-link>
+            <router-link to="/bar">Click to Bar Page</router-link>
+        </p>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -12,8 +17,6 @@
     };
 </script>
 
-<style lang="less">
-    div {
-        display: flex;
-    }
+<style>
+
 </style>

@@ -1,0 +1,1 @@
+VBoxManage controlvm archlinux poweroff
